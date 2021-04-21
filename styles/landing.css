@@ -1,0 +1,150 @@
+/* Slideshow container */
+.slideshow-container {
+  height: 90vh;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 10% 80% 10%;
+  grid-template-areas:
+    "... ... ..."
+    "cLeft ... cRight"
+    "... bullets ...";
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 4;
+  grid-column-end: 4;
+}
+
+.slide1 {
+  background: linear-gradient(
+      0deg,
+      rgba(55, 55, 55, 0.5),
+      rgba(55, 55, 55, 0.5)
+    ),
+    url(../images/slide1.jpg);
+}
+
+.slide2 {
+  background: linear-gradient(
+      0deg,
+      rgba(55, 55, 55, 0.5),
+      rgba(55, 55, 55, 0.5)
+    ),
+    url(../images/slide2.jpg);
+}
+
+.slide3 {
+  background: linear-gradient(
+      0deg,
+      rgba(55, 55, 55, 0.5),
+      rgba(55, 55, 55, 0.5)
+    ),
+    url(../images/slide3.jpg);
+}
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+  grid-area: cRight;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.prev {
+  grid-area: cLeft;
+  display: flex;
+  align-items: center;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.bullets {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  grid-area: bullets;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
